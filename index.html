@@ -5,47 +5,64 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<title>DSC106 - HW5 ZingCharts Demo</title>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Paytone+One&display=swap" rel="stylesheet" />
-	<link href="./styles/dashboard.css" rel="stylesheet" />
-	<script src="https://cdn.zingchart.com/zingchart.min.js"></script>
-	<script src="./scripts/main.js"></script>
+    <title>Movie Project</title>
+    <!--<script src="https://code.highcharts.com/highcharts.js"></script>-->
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-	<h1><img src="./images/kf-logo.png" alt="Dingus & Widget" height="50" width="150" />Global Dashboard</h1>
+    <div>
+        <img id="logo" src="1200px-IMDB_Logo_2016.svg.png">
+        <h1>Movie Analysis</h1>
+        <p style="padding-left: 3em; font-size: 1.2em;">Author: <br/>Jiayun Wang & Yueting Wu</p>
+        <h2>&#10148; Intro</h2>
+        <h3>The following visualizations we made are based on data from the IMDb website, one of the most popular and authoritative source of movie content. Our goal is to 
+            give people who work for or have work related to the movie industry an idea of potential features that will make movies more popular and profitable. Also, movie lovers 
+            and people who are curious about the movie market may also get a reference of their interested information.
+        </h3><br />
+        <h2 style="color:darkred;">&#10003; Genres vs. Ratings</h2>
+    </div>
+    <h3>Word cloud of genres: font size as indicator how pervasive a particular genre is.</h3>
+    <img src="wordcloud.png"><br /><br />
 
-	<section>
-		<div id="myMap"></div>
-	</section>
+    <h3>Bar Chart of genres: Height of bar chart shows average weighted rating for all genres in all movies data. A movie might have multiple genres.</h3>
+    <br/><br/>
+    <div id="genresbar" class="barchart"> <!--style="top:60px; left:10px; width:1000px; height:800px;">-->
+        <canvas id="bar-chart" width="600" height="350"></canvas>
+       </div>
+       
+    <script src="bar-chart.js"></script><hr />
 
-	<section id="vitalScorecards">
-		<section id="salesScorecard">
-			<h3>Sales</h3>
-			<output id="totalSales"> </output>
-		</section>
-		<section id="dingusScorecard">
-			<h3>Knife</h3>
-			<output id="dingusSold"> </output>
-		</section>
+    <h2 style="color:darkred;">&#10003; Production Company vs. Votes and Ratings</h2>
+    <h3>Pie Chart of production company: Only top 10 popular production company is shown. Area in pie chart represents the percentage of votes each production company gain. And it also shows the average weighted rating for each production company.</h3>
+    <figure class="highcharts-figure">
+    <div id="pie"></div>
+    </figure>
+    <script src="pie-chart.js"></script><hr />
+    
+    <h2 style="color:darkred;">&#10003; Geographical Analysis</h2>
+    <h3>Interactive world map showing the average movie rating released in a particular country when hovering over the corresponding area.</h3>
+    <div id="map"></div><hr />
+    <script src="map.js"></script>
+    <h2 style="color:darkred;">&#10003; Temporal Analysis</h2>
+    <h3>Line charts showing the temporal change of average movie ratings and number of votes over years.</h3>
+    <div id="line1"></div>
+    <div id="line2"></div>
+    <script src="line-chart.js"></script><hr />
 
-		<section id="widgetScorecard">
-			<h3>Fork</h3>
-			<output id="widgetSold"> </output>
-		</section>	
-	</section>
-
-	<hr />
-
-	<section id="summaryCharts" class="chart-parent--container">
-		<section id="salesPerMonthChart" class="chart--container"></section>
-		<section id="totalSalesChart" class="chart--container"></section>
-	</section>
-
-	<hr />
-
-	<section id="stockChart"></section>
-
+    <p>Source: https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset</p>
+      
 </body>
 
 </html>
