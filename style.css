@@ -1,0 +1,44 @@
+#logo {
+    width: 9%;
+    height: 6%;
+    float: left;
+    padding-left: 1.5em;
+}
+
+* {
+    font-family: monospace;
+    background-color: antiquewhite;
+}
+
+h1 {
+    padding: 5px;
+    font-size: 3.5em;
+    padding-left: 3.5em;
+}
+
+h2 {
+    font-size: 2em;
+    padding-left: 2em;
+}
+
+h3 {
+    padding-left: 3em;
+    padding-right: 3em;
+    font-size: 1.5em;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#genresbar {
+    width:1000px; 
+    height:600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
